@@ -1,15 +1,63 @@
-# Tic-Tac-Toe
-Welcome to the Tic-Tac-Toe repository! This classic game is designed to resemble a hand-drawn experience.
-It is built using React. The hand-drawn appearance is achieved through custom styling and CSS.
+# Contenedor de aplicación tic-tac-toe
 
-![image](https://github.com/Valentina-Peralta/tic-tac-toe/assets/125395224/2a6bc33e-210c-42be-a131-245a399d5d07)
+Este contenedor se utiliza para ejecutar una aplicación basada en Node.js en un entorno específico. Sigue los pasos a continuación para ejecutar la aplicación en tu sistema.
 
-## Working on
-The Tic-Tac-Toe application is still a work in progress. Currently, you can enjoy playing the game against another player. However, I have exciting plans to introduce new features and enhancements in the near future, including:
+## Dockerfile
+El Dockerfile empaqueta la aplicación, sus dependencias y configuraciones en un contenedor. 
 
-- **Play against the computer**: I am working on integrating an AI player for single-player mode.
-- **Customization options**: I will be adding features to allow players to personalize the game, such as choosing different themes, board sizes, or symbols.
-- **Game history:** I plan to implement a game history feature that will allow players to review and revisit their past matches.
+**Base de imagen de Node.js**: Utiliza una imagen base de Node.js en su versión 17 alpine como punto de partida.
+**Directorio de trabajo**: Establece el directorio de trabajo dentro del contenedor en /app.
+**Copia de archivos**: Copia el archivo package.json desde tu directorio de contexto al directorio de trabajo en el contenedor.
+**Instalación de dependencias**: Ejecuta el comando npm install para instalar las dependencias de Node.js que se encuentran en el package.json.
+**Copia de archivos de la aplicación**: Copia todos los archivos del proyecto tic-tac-toe desde tu directorio de contexto al directorio de trabajo en el contenedor.
+**Comando de inicio**: El comando final en el Dockerfile especifica que cuando se inicie el contenedor, se ejecutará la aplicación utilizando el comando npm run dev.
 
-## I look forward to sharing the upcoming features and enhancements with you. Enjoy playing the game and stay tuned for updates!
-https://tictactoe-vperalta.netlify.app/
+## vite.config.js
+En el archivo vite.config.js se especifica que la aplicación será accesible en el puerto 8080 de tu host cuando ejecutes el contenedor.
+
+## Instrucciones para ejecutar el contenedor:
+
+**Instala Docker**: 
+
+Asegúrate de tener Docker instalado en tu sistema. Puedes descargarlo desde Docker's website.
+
+
+**Iniciar Docker**: 
+
+Abre Docker Desktop (en Windows o macOS) o inicia el servicio de Docker en tu sistema si estás utilizando Linux.
+
+
+**Descargar la imagen**: 
+
+Abre una terminal o línea de comandos y ejecuta el siguiente comando para descargar la imagen desde Docker Hub:
+
+`docker pull valentinaperaltavila858/tic-tac-toe:1.0`
+
+
+Esto descargará la imagen valentinaperaltavila858/tic-tac-toe:1.0 desde DockerHub a tu sistema.
+
+
+**Ejecutar el contenedor**: 
+
+Una vez que la imagen se haya descargado, puedes ejecutar un contenedor basado en esa imagen. Utiliza el siguiente comando:
+
+
+`docker run -p 8080:8080 -d valentinaperaltavila858/tic-tac-toe:1.0`
+
+
+**-p 3000:3000** hace coincidir el puerto 8080 del contenedor con el puerto 8080 de tu sistema host.
+**-d** inicia el contenedor en segundo plano (modo daemon).
+
+
+**Verificar el contenedor:** 
+
+Puedes verificar que el contenedor se está ejecutando utilizando este 
+`docker ps`
+Esto mostrará una lista de contenedores en ejecución.
+
+
+**Acceder a la aplicación:** 
+
+Abre un navegador web y navega a http://localhost:8080 . Deberías ver la aplicación ejecutándose en tu sistema local a través del contenedor Docker.
+
+
