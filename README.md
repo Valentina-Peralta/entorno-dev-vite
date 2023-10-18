@@ -55,9 +55,10 @@ Puedes verificar que el contenedor se está ejecutando utilizando este
 `docker ps`
 Esto mostrará una lista de contenedores en ejecución.
 
-
 **Acceder a la aplicación:** 
 
 Abre un navegador web y navega a http://localhost:8080 . Deberías ver la aplicación ejecutándose en tu sistema local a través del contenedor Docker.
+
+![image](https://github.com/Valentina-Peralta/entorno-dev-vite/assets/125395224/78adfcbc-5d9d-4469-8571-5c43167170b1)
 
 
