@@ -1,6 +1,6 @@
 # Contenedor de aplicación tic-tac-toe
 
-Este contenedor se utiliza para ejecutar una aplicación basada en Node.js en un entorno específico. Sigue los pasos a continuación para ejecutar la aplicación en tu sistema.
+Este contenedor se utiliza para ejecutar una aplicación basada en Vite en un entorno específico.
 
 ## Dockerfile
 El Dockerfile empaqueta la aplicación, sus dependencias y configuraciones en un contenedor. 
